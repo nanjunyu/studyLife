@@ -17,7 +17,7 @@ public class Test {
     /*public static void main(String[] args) {
         Cat cat=new Cat();
         Animal dog=new Dog();
-        function(cat);
+        function(cat)
         function(dog);
     }*/
 
