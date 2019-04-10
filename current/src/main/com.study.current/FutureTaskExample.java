@@ -20,19 +20,19 @@ public class FutureTaskExample {
         while (true) {
             try {
                 if(futureTask1.isDone() && futureTask2.isDone()){//  两个任务都完成
-                    System.out.println("Done");
+                    System.out.println("两个任务都执行结束了....");
                     executor.shutdown();                          // 关闭线程池和服务
                     return;
                 }
 
                 if(!futureTask1.isDone()){ // 任务1没有完成，会等待，直到任务完成
-                    System.out.println("FutureTask1 output="+futureTask1.get());
+                    System.out.println("任务一没有完成在等待，直到任务完成.....FutureTask1 output="+futureTask1.get());
                 }
 
-                System.out.println("Waiting for FutureTask2 to complete");
+                System.out.println("等待任务2完成");
                 String s = futureTask2.get(200L, TimeUnit.MILLISECONDS);
                 if(s !=null){
-                    System.out.println("FutureTask2 output="+s);
+                    System.out.println("任务2完成了"+s);
                 }
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
