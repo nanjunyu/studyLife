@@ -6,6 +6,8 @@ package com.study.jvm;
  */
 public class StackOverflowError {
 
+    //- Xss 设置单个线程栈大小，一般默认512~1024kb
+
     static int count =0;
 
     static void redo(){

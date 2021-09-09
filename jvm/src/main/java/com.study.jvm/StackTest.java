@@ -6,8 +6,14 @@ package com.study.jvm;
  */
 public class StackTest {
 
-    //jvm 设置
-    //- Xss 128k 默认是1024k
+    //静态变量 类的信息
+    public static int x=666;
+
+    //堆里面的类的类元信息指向堆
+
+    //静态变量 类的信息 → 指针指向堆
+    public static People people=new People();
+
 
     //每一个方法对应一个栈帧内存
     private int compute(){
@@ -34,5 +40,6 @@ public class StackTest {
 
         StackTest math=new StackTest();
         System.out.println(math.compute());
+        new Thread().start();
     }
 }
